@@ -6,10 +6,10 @@ import React from "react";
 
 export function useAvailableProducts() {
   return useQuery<AvailableProduct[], AxiosError>(
-    "available-products",
+    'getProductList',
     async () => {
       const res = await axios.get<AvailableProduct[]>(
-        `${API_PATHS.bff}/product/available`
+        `${API_PATHS.bff}/product/getProductList`
       );
       return res.data;
     }
@@ -19,7 +19,7 @@ export function useAvailableProducts() {
 export function useInvalidateAvailableProducts() {
   const queryClient = useQueryClient();
   return React.useCallback(
-    () => queryClient.invalidateQueries("available-products", { exact: true }),
+    () => queryClient.invalidateQueries("getProductList", { exact: true }),
     []
   );
 }
