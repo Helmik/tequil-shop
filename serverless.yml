@@ -1,11 +1,11 @@
-service: tequila-store
+service: helmik-store
 
 frameworkVersion: "3"
 
 provider:
   name: aws
   runtime: nodejs14.x
-  region: us-east-1
+  region: us-east-2
   # setup profile for AWS CLI.
   # profile: node-aws
 
