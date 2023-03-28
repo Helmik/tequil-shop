@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "~/components/MainLayout/MainLayout";
 import PageProductForm from "~/components/pages/PageProductForm/PageProductForm";
@@ -9,6 +10,13 @@ import PageProducts from "~/components/pages/PageProducts/PageProducts";
 import { Typography } from "@mui/material";
 
 function App() {
+
+  useEffect(() => {
+    const user = 'helmik';
+    const password = 'TEST_PASSWORD';
+    localStorage.setItem('token', btoa(`${user}:${password}`));
+  }, []);
+
   return (
     <MainLayout>
       <Routes>
